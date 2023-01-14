@@ -10,16 +10,14 @@ const dataSource = new ProductData("tents");
 
 //Jaden's Attempted Solution
 function addProductToCart(product) {
-  if (!("numOrders" in localStorage)){
-    setLocalStorage("numOrders", 0)
-    setLocalStorage(0, product)
-  }
-  else {
-    let currOrder = getLocalStorage("numOrders") + 1
-    setLocalStorage(currOrder, product)
+  if (!("numOrders" in localStorage)) {
+    setLocalStorage("numOrders", 0);
+    setLocalStorage(0, product);
+  } else {
+    let currOrder = getLocalStorage("numOrders") + 1;
+    setLocalStorage(currOrder, product);
     setLocalStorage("numOrders", currOrder);
   }
-
 }
 
 // add to cart button event handler
