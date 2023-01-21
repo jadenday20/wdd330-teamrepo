@@ -1,17 +1,20 @@
+import { getLocalStorage, getParam, setLocalStorage } from "./utils.mjs";
 import ProductData from "./ProductData.mjs";
 import ProductDetails from "./ProductDetails.mjs";
-import { getParam } from "./utils.mjs";
-
 const dataSource = new ProductData("tents");
+const product = new ProductDetails(productId, dataSource)
 const productId = getParam("product");
-
-const product = new ProductDetails(productId, dataSource);
 product.init();
 
-// ////OG Solution
-// // function addProductToCart(product) {
-// //   setLocalStorage("so-cart", product);
-// // }
+console.log(productId);
+
+
+// const dataSource = new ProductData("backpacks");
+
+////OG Solution
+// function addProductToCart(product) {
+//   setLocalStorage("so-cart", product);
+// }
 
 // //Jaden's Attempted Solution
 // function addProductToCart(product) {
