@@ -1,7 +1,13 @@
-import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { getLocalStorage, getParam, setLocalStorage } from "./utils.mjs";
 import ProductData from "./ProductData.mjs";
-
 const dataSource = new ProductData("tents");
+
+
+const productId = getParam("product");
+console.log(productId);
+
+
+// const dataSource = new ProductData("backpacks");
 
 ////OG Solution
 // function addProductToCart(product) {
