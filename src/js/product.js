@@ -6,10 +6,10 @@ import ProductDetails from "./productDetails.js";
 const dataSource = new ProductData("tents");
 const productId = getParam("product");
 
-console.log(dataSource.findProductById(productId));
+// console.log(dataSource.findProductById(productId));
 
 const product = new ProductDetails(productId, dataSource);
-product.init()
+product.init();
 
 ////OG Solution
 // function addProductToCart(product) {
