@@ -50,9 +50,8 @@ export function renderWithTemplate(template, parentElement, data, callback) {
 
 
 export async function loadTemplate(path){
-  const html = await fetch(path);
-  const template = document.createElement("template");
-  template.innerHTML = html;
+  const res = await fetch(path);
+  const template = await res.text();
   return template;
 
 }
