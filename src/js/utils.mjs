@@ -36,7 +36,35 @@ export function renderListWithTemplate(
   if (clear) {
     parentElement.innerHTML = "";
   }
+
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
+
+export function renderWithTemplate(template, parentElement, data, callback) {
+  parentElement.insertAdjacentHTML("afterbegin", template);
+  if(callback) {
+      callback(data);
+  }
+}
+
+
+
+export async function loadTemplate(path){
+  const html = await fetch(path);
+  const template = document.createElement("template");
+  template.innerHTML = html;
+  return template;
+
+}
+
+export async function loadHeaderFooter(){
+  const header = await loadTemplate("../partials/header.html");
+  const footer = await loadTemplate("..partials/footer.html");
+  const headerElements  = document.querySelector("#main-header");
+  const footerElements = document.querySelector("#main-footer");
+  renderListWithTemplate(header, headerElements);
+  renderListWithTemplate(footer, footerElements);
+
 }
 
 // set a listener for both touchend and click
@@ -47,3 +75,6 @@ export function setClick(selector, callback) {
   });
   qs(selector).addEventListener("click", callback);
 }
+// Load the header and footer templates in from our partials. (loadTemplate)
+// Grab the header and footer elements out of the DOM
+//  Render the header and footer (renderWithTemplate.
