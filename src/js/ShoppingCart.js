@@ -1,4 +1,4 @@
-import { getLocalStorage } from './utils.mjs';
+import { getLocalStorage } from "./utils.mjs";
 
 function cartItemsTemplate(item) {
     const card = `<li class="cart-card divider">
