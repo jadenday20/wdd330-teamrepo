@@ -6,8 +6,6 @@ const product = new ProductDetails(productId, dataSource)
 const productId = getParam("product");
 product.init();
 
-console.log(productId);
-
 
 // const dataSource = new ProductData("backpacks");
 

@@ -35,15 +35,15 @@ export default class ProductDetails {
           .getElementById("addToCart")
           .addEventListener("click", this.addToCart.bind(this));
       }
-      addToCart(){
-        if (!("numOrders" in localStorage)) {
-            setLocalStorage("numOrders", 0);
-            setLocalStorage(0, this.product);
-          } else {
-            let currOrder = getLocalStorage("numOrders") + 1;
-            setLocalStorage(currOrder, this.product);
-            setLocalStorage("numOrders", currOrder);
-          }
+      addToCart() {
+        let cartContents = getLocalStorage("so-cart");
+        //check to see if there was anything there
+        if (!cartContents) {
+          cartContents = [];
+        }
+        // then add the current product to the list
+        cartContents.push(this.product);
+        setLocalStorage("so-cart", cartContents);
       }
       renderProductDetails(selector) {
         const element = document.querySelector(selector);
