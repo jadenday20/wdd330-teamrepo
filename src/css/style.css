@@ -122,7 +122,7 @@ button {
 .products {
   padding: 0.5em;
 }
-.product-list {
+.product-list, .categories {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -141,6 +141,22 @@ button {
   border: 1px solid var(--light-grey);
   max-width: 250px;
 }
+
+.categories {
+  max-width: 900px;
+    margin: auto;
+}
+
+.category-card{
+border: none;
+max-width: 150px;
+
+}
+
+.category-card h3 {
+  text-align: center;
+}
+
 .product-card h2,
 .product-card h3,
 .product-card p {
@@ -214,6 +230,13 @@ button {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
   }
+}
+@media screen and (max-width: 499px){
+  .categories {
+    flex-direction: column;
+    display: block;
+  }
+
 }
 
 footer {
