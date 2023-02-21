@@ -28,7 +28,9 @@ export default class ProductList {
       // render the list 
       this.renderList(list);
           //set the title to the current category
-    document.querySelector(".title").innerHTML = this.category;
+    var firstLetter = this.category.charAt(0).toUpperCase();
+    var remainingString = this.category.slice(1);
+    document.querySelector(".title").innerHTML = firstLetter + remainingString;
     }
     
   renderList(list) {
