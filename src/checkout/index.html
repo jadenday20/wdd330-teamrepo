@@ -10,7 +10,8 @@
 
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/cart.js" type="module"></script>
-    <script src="../js/main.js" type="module"></script>
+    <!-- <script src="../js/main.js" type="module"></script> -->
+    <script src="../js/checkout.js" type="module"></script>
   </head>
 
   <body>
@@ -42,16 +43,20 @@
           <fieldset><legend>Order Summary</legend>
           <ul class="order-summary">
             <li>
-              <label for="cart-subtotal">Item Subtotal</label>
+              <label for="cart-subtotal">Item Subtotal(<span id="numItems"></span>)</label>
+              <span id="cart-subtotal"></span>
             </li>
             <li>
               <label for="shipping-est">Shipping Estimate</label>
+              <span id="shipping-est"></span>
             </li>
             <li>
               <label for="Tax">Tax</label>
+              <span id="Tax"></span>
             </li>
             <li>
               <label for="total" >Order Total</label>
+              <span id="total" ></span>
             </li>
           </ul>
 
