@@ -1,7 +1,7 @@
 export function calculateSubtotal(productList){
     var subtotal = 0;
     for (let i = 0; i < productList.length; i++){
-        subtotal += i.FinalPrice;
+        subtotal += productList[i].FinalPrice;
     }
     return subtotal;
 }
