@@ -35,6 +35,17 @@ export default class ProductDetails {
         document
           .getElementById("addToCart")
           .addEventListener("click", this.addToCart.bind(this));
+        document
+          .getElementById("addToCart")
+          .addEventListener("click", this.setCartNumber.bind(this));
+      }
+      setCartNumber(){
+        //display the number of items avobe the cart
+        let counter = document.getElementById("productOrderCount");
+        let cartContents = getLocalStorage("so-cart");
+        let numItems = cartContents.length;
+        counter.textContent = numItems;
+        counter.style.display = "block";
       }
       addToCart() {
         let cartContents = getLocalStorage("so-cart");

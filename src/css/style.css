@@ -106,8 +106,9 @@ button {
 .cart svg {
   width: 25px;
 }
-.cart:hover svg {
-  fill: gray;
+.cart:hover {
+  /* fill: gray; */
+  opacity: 50%;
 }
 
 /* End cart icon styles */
@@ -301,4 +302,19 @@ footer {
 
 ul.order-summary {
   padding-left: 0;
+}
+
+#productOrderCount {
+  border-radius: 50%;
+  width: 19px;
+  background-color: var(--primary-color);
+  position: absolute;
+  color: var(--dark-grey);
+  top: -7px;
+  right: -1px;
+  font-size: 15px;
+  height: 19px;
+}
+#so-cart-icon {
+  text-decoration: none;
 }

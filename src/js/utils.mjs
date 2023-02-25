@@ -61,6 +61,7 @@ export async function loadHeaderFooter(){
   const indexFooter = document.getElementById("main-footer");
   renderWithTemplate(header, indexHeader)
   renderWithTemplate(footer, indexFooter)
+  setCartNumber()
 }
 
 // set a listener for both touchend and click
@@ -70,4 +71,17 @@ export function setClick(selector, callback) {
     callback();
   });
   qs(selector).addEventListener("click", callback);
+}
+
+export function setCartNumber(){
+  //display the number of items avobe the cart
+  let counter = document.getElementById("productOrderCount");
+  if ("so-cart" in localStorage){
+    let cartContents = getLocalStorage("so-cart");
+      let numItems = cartContents.length;
+      counter.textContent = numItems;
+  }
+  else{
+    counter.style.display = "none";
+  }
 }
