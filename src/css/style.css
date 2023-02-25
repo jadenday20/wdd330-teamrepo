@@ -121,6 +121,8 @@ button {
 }
 .products {
   padding: 0.5em;
+  max-width: 500px;
+  margin: auto;
 }
 .product-list,
 .product-grid {
@@ -280,4 +282,25 @@ footer {
   text-align: center;
   margin-bottom: 1em;
   margin-top: 1em;
+}
+
+.user_info{
+  display: flex;
+  flex-direction: column;
+}
+
+.user_info input[type="text"] {
+  height: 30px;
+}
+
+.order-summary{
+list-style: none;
+}
+
+.order-summary li{
+  padding: 1em;
+}
+
+ul.order-summary {
+  padding-left: 0;
 }

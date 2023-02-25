@@ -20,8 +20,8 @@
       <section class="products">
         <h2>Review & Place your Order</h2>
         <form action="checkout">
-          <fieldset><legend>Shipping</legend></fieldset>
-          <div>
+          <fieldset><legend>Shipping</legend>
+          <div class="user_info">
           <label for="first-name">First Name</label><input type="text" required>
           <label for="last-name">Last Name</label><input type="text" required>
           <label for="street">Street</label><input type="text" required>
@@ -29,16 +29,18 @@
           <label for="state">State</label><input type="text" required>
           <label for="zip">Zip</label><input type="text" required>
           </div>
+        </fieldset>
 
-          <fieldset><legend>Payment</legend></fieldset>
-          <div>
+          <fieldset><legend>Payment</legend>
+          <div class="user_info">
           <label for="card-number">Card Number</label><input type="text" required>
           <label for="expiration">Expiration</label><input type="text" required>
           <label for="security">Stecurity</label><input type="text" required>
           </div>
+        </fieldset>
           
           <fieldset><legend>Order Summary</legend>
-          <ul>
+          <ul class="order-summary">
             <li>
               <label for="cart-subtotal">Item Subtotal</label>
             </li>
@@ -49,7 +51,7 @@
               <label for="Tax">Tax</label>
             </li>
             <li>
-              <label for="total">Order Total</label>
+              <label for="total" >Order Total</label>
             </li>
           </ul>
 
