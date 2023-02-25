@@ -232,15 +232,13 @@ button {
   display: none;
 }
 
-a.checkout-link{
-  text-decoration: none; 
+a.checkout-link {
+  text-decoration: none;
   margin: 0;
   padding: 1em;
   color: var(--dark-grey);
-  
-
 }
-div.checkout-btn{
+div.checkout-btn {
   border: 1px solid;
   max-width: fit-content;
   margin: auto;
@@ -284,7 +282,7 @@ footer {
   margin-top: 1em;
 }
 
-.user_info{
+.user_info {
   display: flex;
   flex-direction: column;
 }
@@ -293,11 +291,11 @@ footer {
   height: 30px;
 }
 
-.order-summary{
-list-style: none;
+.order-summary {
+  list-style: none;
 }
 
-.order-summary li{
+.order-summary li {
   padding: 1em;
 }
 

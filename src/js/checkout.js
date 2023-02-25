@@ -1,11 +1,16 @@
-import {orderSummaryTemplate, calculateSubtotal, calculateTaxes, calculateShipping, calculateTotal} from "./CheckoutProcess.mjs";
+import {
+  orderSummaryTemplate,
+  calculateSubtotal,
+  calculateTaxes,
+  calculateShipping,
+  calculateTotal,
+} from "./CheckoutProcess.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
-import { setLocalStorage, getLocalStorage } from "./utils.mjs";
+import { getLocalStorage } from "./utils.mjs";
 
 loadHeaderFooter();
 
 let cartContents = getLocalStorage("so-cart");
-
 
 let numItems = cartContents.length;
 let subtotal = calculateSubtotal(cartContents);
