@@ -119,14 +119,14 @@ button {
   max-width: 600px;
   margin: auto;
 }
-.products {
+section.checkout {
   padding: 0.5em;
   max-width: 500px;
   margin: auto;
 }
 .product-list,
 .product-grid {
-  /* display: flex; */
+  display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   list-style-type: none;
@@ -136,6 +136,9 @@ button {
 .product-grid li {
   text-decoration: none;
   color: var(--dark-grey);
+}
+.cart-checkout-list{
+  display: block;
 }
 /* Styles for product lists */
 .product-card {
@@ -236,7 +239,7 @@ a.checkout-link{
   text-decoration: none; 
   margin: 0;
   padding: 1em;
-  color: var(--dark-grey);
+  color: white;
   
 
 }
@@ -245,7 +248,7 @@ div.checkout-btn{
   max-width: fit-content;
   margin: auto;
   padding: 1em;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 @media screen and (min-width: 500px) {
