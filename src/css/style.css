@@ -138,7 +138,7 @@ section.checkout {
   text-decoration: none;
   color: var(--dark-grey);
 }
-.cart-checkout-list{
+.cart-checkout-list {
   display: block;
 }
 /* Styles for product lists */
@@ -250,11 +250,14 @@ div.checkout-btn {
   background-color: var(--secondary-color);
 }
 
-span#cart-subtotal, span#shipping-est, span#Tax, span#total {
+span#cart-subtotal,
+span#shipping-est,
+span#Tax,
+span#total {
   float: right;
 }
 
-.checkout fieldset{
+.checkout fieldset {
   margin: 1em;
 }
 
