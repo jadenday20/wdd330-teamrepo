@@ -21,6 +21,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--font-base);
   color: var(--dark-grey);
+  padding: 0 1em;
 }
 img {
   max-width: 100%;
@@ -250,10 +251,14 @@ div.checkout-btn {
   background-color: var(--secondary-color);
 }
 
-span#cart-subtotal,
-span#shipping-est,
-span#Tax,
-span#total {
+span#cart-subtotal, 
+span#shipping-est, 
+span#Tax, 
+span#total, 
+span#cartTotal, 
+span#shipping, 
+span#tax, 
+span#orderTotal {
   float: right;
 }
 
@@ -275,6 +280,12 @@ span#total {
   }
 }
 @media screen and (max-width: 499px) {
+  body {
+    padding: 0;
+  }
+  main {
+    padding: 5px;
+  }
   .product-grid {
     flex-direction: column;
     display: block;
