@@ -267,6 +267,10 @@ span#orderTotal {
   float: right;
 }
 
+.subtotal{
+  text-align: center;
+}
+
 .checkout fieldset {
   margin: 1em;
 }
@@ -281,6 +285,7 @@ span#orderTotal {
   }
   .cart-card {
     font-size: inherit;
+    column-gap: 1em;
     grid-template-columns: 150px auto 15%;
   }
 }
