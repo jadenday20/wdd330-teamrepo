@@ -24,5 +24,12 @@ function cartItemTemplate(item) {
 
   return newItem;
 }
-
+if (getLocalStorage("so-cart")) {
 renderCartContents();
+}
+else {
+  var checkoutLink = document.querySelector(".checkout-btn");
+  checkoutLink.removeAttribute("onclick");
+  checkoutLink.style.opacity = "50%";
+  checkoutLink.style.cursor = "default";
+}

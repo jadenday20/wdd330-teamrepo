@@ -15,15 +15,33 @@ loadHeaderFooter();
 const myCheckout = new CheckoutProcess("so-cart", ".order-summary");
 myCheckout.init();
 
+// document.querySelector("#checkout").addEventListener("click", (e) => {
+//   e.preventDefault();
+//   myCheckout.checkout();
+// });
+
 document
   .querySelector("#zip")
   .addEventListener("blur", myCheckout.calculateOrdertotal.bind(myCheckout));
 // listening for click on the button
-document.querySelector("#checkout").addEventListener("click", (e) => {
-  e.preventDefault();
 
-  myCheckout.checkout();
-});
+// document.querySelector("#checkout").addEventListener("click", (e) => {
+//   e.preventDefault();
+//   myCheckout.checkout();
+// });
+
+document.querySelector("#checkout")
+  .addEventListener("click", (e) => {
+    console.log("hi")
+    e.preventDefault();
+    var myForm = document.forms[0];
+    var chk_status = myForm.checkValidity();
+    myForm.reportValidity();
+    if(chk_status) 
+      myCheckout.checkout();
+      localStorage.removeItem("so-cart");
+      window.location.href = "../checkout/success.html";
+  });
 
 
 // let cartContents = getLocalStorage("so-cart");
