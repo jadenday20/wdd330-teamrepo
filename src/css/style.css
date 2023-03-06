@@ -250,7 +250,7 @@ div.checkout-btn {
   background-color: var(--secondary-color);
 }
 
-span#cart-subtotal, span#shipping-est, span#Tax, span#total {
+span#cart-subtotal, span#shipping-est, span#Tax, span#total, span#cartTotal, span#shipping, span#tax, span#orderTotal {
   float: right;
 }
 

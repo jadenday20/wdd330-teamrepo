@@ -9,7 +9,7 @@
     <title>Sleep Outside | Checkout</title>
 
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/cart.js" type="module"></script>
+    <!-- <script src="../js/cart.js" type="module"></script> -->
     <!-- <script src="../js/main.js" type="module"></script> -->
     <script src="../js/checkout.js" type="module"></script>
   </head>
@@ -18,49 +18,49 @@
     <header class="divider" id="main-header"></header>
 
     <main class="divider">
-      <section class="products checkout">
+      <section class="checkout-form products checkout">
         <h2>Review & Place your Order</h2>
         <form action="checkout">
           <fieldset><legend>Shipping</legend>
-          <div class="user_info">
+          <div class="checkout__name user_info">
           <label for="first-name">First Name</label><input type="text" required>
           <label for="last-name">Last Name</label><input type="text" required>
           <label for="street">Street</label><input type="text" required>
           <label for="city">City</label><input type="text" required>
           <label for="state">State</label><input type="text" required>
-          <label for="zip">Zip</label><input type="text" required>
+          <label for="zip">Zip</label><input type="text" name="zip" id="zip" required>
           </div>
         </fieldset>
 
           <fieldset><legend>Payment</legend>
           <div class="user_info">
-          <label for="card-number">Card Number</label><input type="text" required>
-          <label for="expiration">Expiration</label><input type="text" required>
-          <label for="security">Stecurity</label><input type="text" required>
+          <label for="cardNumber">Card Number</label><input name="cardNumber" required>
+          <label for="expiration">Expiration</label><input name="expiration" required>
+          <label for="code">Stecurity</label><input name="code" required>
           </div>
         </fieldset>
           
           <fieldset><legend>Order Summary</legend>
-          <ul class="order-summary">
+          <ul class="checkout-summary order-summary">
             <li>
-              <label for="cart-subtotal">Item Subtotal(<span id="numItems"></span>)</label>
-              <span id="cart-subtotal"></span>
+              <label for="cartTotal">Item Subtotal(<span id="num-items"></span>)</label>
+              <span id="cartTotal"></span>
             </li>
             <li>
-              <label for="shipping-est">Shipping Estimate</label>
-              <span id="shipping-est"></span>
+              <label for="shipping">Shipping Estimate</label>
+              <span id="shipping"></span>
             </li>
             <li>
-              <label for="Tax">Tax</label>
-              <span id="Tax"></span>
+              <label for="tax">Tax</label>
+              <span id="tax"></span>
             </li>
             <li>
-              <label for="total"><strong>Order Total</strong></label>
-              <span id="total" ></span>
+              <label for="orderTotal"><strong>Order Total</strong></label>
+              <span id="orderTotal" ></span>
             </li>
           </ul>
 
-          <button id="checkout-" type="submit">Checkout</button>
+          <button id="checkoutSubmit" type="submit">Checkout</button>
         </fieldset>
         </form>
     </main>
