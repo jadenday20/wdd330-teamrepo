@@ -6,7 +6,6 @@
 //   calculateTotal,
 // } from "./CheckoutProcess.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
-import { getLocalStorage } from "./utils.mjs";
 import CheckoutProcess from "./CheckoutProcess.mjs";
 
 loadHeaderFooter();
@@ -32,7 +31,6 @@ document
 
 document.querySelector("#checkout")
   .addEventListener("click", (e) => {
-    console.log("hi")
     e.preventDefault();
     var myForm = document.forms[0];
     var chk_status = myForm.checkValidity();
