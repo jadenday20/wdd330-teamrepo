@@ -73,6 +73,21 @@ export function setClick(selector, callback) {
   qs(selector).addEventListener("click", callback);
 }
 
+export function alertMessage(message, scroll = true){
+  const alert = document.createElement("div");
+  alert.classList.add("alert");
+  alert.innerHTML = `<p>${message},</p><span>X</span>`;
+  alert.addEventListener("click", function(e){
+    if(e.targe.tagName == "SPAN"){
+      main.removeChild(this);
+    }
+  })
+  const main = document.querySelector("main");
+  main.prepend(alert);
+  if (scroll)
+  window.scrollTo(0,0);
+}
+
 export function setCartNumber(){
   //display the number of items avobe the cart
   let counter = document.getElementById("productOrderCount");
@@ -84,4 +99,9 @@ export function setCartNumber(){
   else{
     counter.style.display = "none";
   }
+}
+
+export function removeAllAlerts() {
+  const alerts = document.querySelectorAll(".alert");
+  alerts.forEach(alert => document.querySelector("main").removeChild(alert));
 }
