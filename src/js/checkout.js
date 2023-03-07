@@ -5,12 +5,12 @@
 //   calculateShipping,
 //   calculateTotal,
 // } from "./CheckoutProcess.mjs";
+import { getLocalStorage } from "./utils.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
 import CheckoutProcess from "./CheckoutProcess.mjs";
-
 loadHeaderFooter();
 
-
+if (getLocalStorage("so-cart")){
 const myCheckout = new CheckoutProcess("so-cart", ".order-summary");
 myCheckout.init();
 
@@ -37,9 +37,14 @@ document.querySelector("#checkout")
     myForm.reportValidity();
     if(chk_status) 
       myCheckout.checkout();
-      localStorage.removeItem("so-cart");
-      window.location.href = "../checkout/success.html";
   });
+
+}
+else{
+  let checkoutForm = document.querySelector(".products");
+  checkoutForm.style.display = "none";
+  document.querySelector("main").innerHTML = "<h1>Uh Oh! Looks like your cart is empty:(</h1><a href='/index.html'>Back to the Homepage</a>"
+}
 
 
 // let cartContents = getLocalStorage("so-cart");
