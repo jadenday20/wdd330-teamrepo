@@ -147,14 +147,27 @@ export default class CheckoutProcess {
     const res = await services.checkout(json);
     localStorage.removeItem("so-cart");
     console.log("RESPONSE: ", res);
-    if (res) window.location.href = "../checkout/success.html";
+
+    if (res.ok) window.location.href = "../checkout/success.html";
+    else {
+      const errors = Object.keys(res.response)
+      console.log("ERRORS: ", errors)
+      console.log("error1: ", res.response["cardNumber"])
+      
+      removeAllAlerts();
+      
+      errors.map((errorKey) => {
+        console.log(errorKey)
+
+        alertMessage(res.response[errorKey]);
+      })
+      // for(let message in errors) {
+      //    alertMessage(res.response[message]);
+      // }
+    }
     // } catch (err) {
     //   console.log("ERR: ", err);
     //   removeAllAlerts();
-    //  for(let message in err.message) {
-    //     alertMessage(err.message[message]);
-    //  }
     // }
   }
 }
-

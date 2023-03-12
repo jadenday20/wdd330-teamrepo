@@ -5,8 +5,10 @@ function convertToJson(res) {
   if (res.ok) {
     return res.json();
   } else {
-    var jsonResponse = res.body;
-    throw { name: "servicesError", message: jsonResponse };
+    // var jsonResponse = res.body;
+    // throw { name: "servicesError", message: jsonResponse };
+    
+    return res.json()
   }
 }
 
@@ -35,9 +37,10 @@ export default class ExternalServices {
     };
     try {
       const checkoutResponse = await fetch(baseURL + "checkout/", options)
-      console.log("POST RESPONSE: ", checkoutResponse)
-      const checkoutJSON = await convertToJson(checkoutResponse)
-      return checkoutJSON;
+      // const checkoutJSON = await convertToJson(checkoutResponse)
+      const checkoutJSON = await checkoutResponse.json()
+      // console.log("POST RESPONSE: ", await checkoutJSON)
+      return { ok: !!checkoutResponse.ok, response: checkoutJSON, errorMessage: checkoutResponse.body };
     } catch(err) {
       console.log(err);
       return err;
