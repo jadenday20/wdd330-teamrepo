@@ -1,45 +1,4 @@
-// export function calculateSubtotal(productList){
-//     var subtotal = 0;
-//     for (let i = 0; i < productList.length; i++){
-//         subtotal += productList[i].FinalPrice;
-//     }
-//     return subtotal;
-// }
-
-// export function calculateTaxes(subtotal){
-//     var taxes = (subtotal * 0.06).toFixed(2); 
-//     return taxes;
-// }
-
-// export function calculateShipping(numItems){
-//     var shipping = 10 + numItems * 2;
-//     return shipping;
-// }
-
-// export function calculateTotal(subtotal, taxes, shipping){
-//     return parseFloat(subtotal) + parseFloat(taxes) + parseFloat(shipping);
-// }
-
-// export function orderSummaryTemplate(numItems, subtotal, taxes, shipping, total) {
-//     // return `<fieldset class="summary-template">
-//     // <legend>Order Summary</legend>
-//     //   <label for="subtotal" class="">Item Subtotal(${numItems}):</label>
-//     //   <p name="subtotal">${subtotal}</p>
-//     //   <label for="shipping" class="">Shipping Estimate:</label>
-//     //   <p name="shipping"> ${shipping}</p>
-//     //   <label for="tax" class="">Tax:</label> 
-//     //   <p name="tax">${taxes}</p>
-//     //   <label for="orderTotal" class=""><b>Order Total:<b/></label> 
-//     //   <p name="orderTotal">${total}</p>
-//     //   </fieldset>`;
-//     document.getElementById("numItems").textContent = numItems;
-//     document.getElementById("cartTotal").textContent = "$" + subtotal;
-//     document.getElementById("shipping").textContent = "$" + shipping;
-//     document.getElementById("tax").textContent = "$" + taxes;
-//     document.getElementById("orderTotal").textContent = "$" + total;
-//   }
-
-import { getLocalStorage } from "./utils.mjs";
+import { getLocalStorage, alertMessage, removeAllAlerts } from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
 
 const services = new ExternalServices();
@@ -182,13 +141,20 @@ export default class CheckoutProcess {
     json.expiration = document.querySelector("#expiration").value;
     json.code = document.querySelector("#security").value;
     console.log(json);
-    try {
-      const res = await services.checkout(json);
-      localStorage.removeItem("so-cart");
-      window.location.href = "../checkout/success.html";
-      console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
+
+    
+    // try {
+    const res = await services.checkout(json);
+    localStorage.removeItem("so-cart");
+    console.log("RESPONSE: ", res);
+    if (res) window.location.href = "../checkout/success.html";
+    // } catch (err) {
+    //   console.log("ERR: ", err);
+    //   removeAllAlerts();
+    //  for(let message in err.message) {
+    //     alertMessage(err.message[message]);
+    //  }
+    // }
   }
 }
+

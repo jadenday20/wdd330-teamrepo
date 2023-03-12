@@ -32,8 +32,8 @@ document
 document.querySelector("#checkout")
   .addEventListener("click", (e) => {
     e.preventDefault();
-    var myForm = document.forms[0];
-    var chk_status = myForm.checkValidity();
+    const myForm = document.forms[0];
+    const chk_status = myForm.checkValidity();
     myForm.reportValidity();
     if(chk_status) 
       myCheckout.checkout();
@@ -41,7 +41,7 @@ document.querySelector("#checkout")
 
 }
 else{
-  let checkoutForm = document.querySelector(".products");
+  const checkoutForm = document.querySelector(".products");
   checkoutForm.style.display = "none";
   document.querySelector("main").innerHTML = "<h1>Uh Oh! Looks like your cart is empty:(</h1><a href='/index.html'>Back to the Homepage</a>"
 }

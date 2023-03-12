@@ -33,6 +33,14 @@ export default class ExternalServices {
       },
       body: JSON.stringify(payload),
     };
-    return await fetch(baseURL + "checkout/", options).then(convertToJson);
+    try {
+      const checkoutResponse = await fetch(baseURL + "checkout/", options)
+      console.log("POST RESPONSE: ", checkoutResponse)
+      const checkoutJSON = await convertToJson(checkoutResponse)
+      return checkoutJSON;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
   }
 }

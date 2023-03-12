@@ -73,6 +73,18 @@ export function setClick(selector, callback) {
   qs(selector).addEventListener("click", callback);
 }
 
+export function setCartNumber(){
+  //display the number of items avobe the cart
+  let counter = document.getElementById("productOrderCount");
+  if ("so-cart" in localStorage){
+    let cartContents = getLocalStorage("so-cart");
+      let numItems = cartContents.length;
+      counter.textContent = numItems;
+  }
+  else{
+    counter.style.display = "none";
+  }
+}
 export function alertMessage(message, scroll = true){
   const alert = document.createElement("div");
   alert.classList.add("alert");
@@ -86,20 +98,7 @@ export function alertMessage(message, scroll = true){
   main.prepend(alert);
   if (scroll)
   window.scrollTo(0,0);
-}
-
-export function setCartNumber(){
-  //display the number of items avobe the cart
-  let counter = document.getElementById("productOrderCount");
-  if ("so-cart" in localStorage){
-    let cartContents = getLocalStorage("so-cart");
-      let numItems = cartContents.length;
-      counter.textContent = numItems;
-  }
-  else{
-    counter.style.display = "none";
-  }
-}
+} 
 
 export function removeAllAlerts() {
   const alerts = document.querySelectorAll(".alert");
