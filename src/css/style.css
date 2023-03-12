@@ -280,13 +280,17 @@ div.alert{
   display: flex;
     justify-content: space-between;
     background: rgb(253, 164, 105);
-    padding: 0.5em;
+    /* padding: 0.5em; */
     /* color: red; */
     border: 1px solid rgb(255, 137, 59);
 }
 
 span.alert{
   padding: 1em;
+}
+
+p.alert{
+  margin-left: 1em;
 }
 @media screen and (min-width: 500px) {
   body {
