@@ -25,24 +25,7 @@ function packageItems(items) {
   });
   return simplifiedItems;
 }
-// function packageDetails(details) {
-//   const simplifiedDetails = details.map((item) => {
-//     console.log(item);
-//     return {
-//       quantity: 1,
-//       quantity: 1,
-//       quantity: 1,
-//       quantity: 1,
-//       quantity: 1,
-//       quantity: 1,
-//       quantity: 1,
-//       quantity: 1,
-//       quantity: 1,
-//       quantity: 1,
-//     };
-//   });
-//   return simplifiedDetails;
-// }
+
 
 export default class CheckoutProcess {
   constructor(key, outputSelector) {
@@ -91,35 +74,7 @@ export default class CheckoutProcess {
     tax.innerText = "$" + this.tax;
     orderTotal.innerText = "$" + this.orderTotal;
   }
-  // getHTMLElements() {
-  //   this.fname = document.querySelector(
-  //     "#firstName"
-  //   ).value;
-  //   this.lname = document.querySelector(
-  //     "#lastName"
-  //   ).value;
-  //   this.street = document.querySelector(
-  //     "#street"
-  //   ).value;
-  //   this.city = document.querySelector(
-  //     "#city"
-  //   ).value;
-  //   this.state = document.querySelector(
-  //     "#state"
-  //   ).value;
-  //   this.zip = document.querySelector(
-  //     "#zip"
-  //   ).value;
-  //   this.cardNumber = document.querySelector(
-  //     "#cardNumber"
-  //   ).value;
-  //   this.expiration = document.querySelector(
-  //     "#expiration"
-  //   ).value;
-  //   this.code = document.querySelector(
-  //     "#security"
-  //   ).value;
-  // }
+
   async checkout() {
     const formElement = document.forms["checkout"];
 
@@ -197,3 +152,53 @@ export default class CheckoutProcess {
 
 
        //        setLocalStorage("so-cart", []);
+
+
+         // getHTMLElements() {
+  //   this.fname = document.querySelector(
+  //     "#firstName"
+  //   ).value;
+  //   this.lname = document.querySelector(
+  //     "#lastName"
+  //   ).value;
+  //   this.street = document.querySelector(
+  //     "#street"
+  //   ).value;
+  //   this.city = document.querySelector(
+  //     "#city"
+  //   ).value;
+  //   this.state = document.querySelector(
+  //     "#state"
+  //   ).value;
+  //   this.zip = document.querySelector(
+  //     "#zip"
+  //   ).value;
+  //   this.cardNumber = document.querySelector(
+  //     "#cardNumber"
+  //   ).value;
+  //   this.expiration = document.querySelector(
+  //     "#expiration"
+  //   ).value;
+  //   this.code = document.querySelector(
+  //     "#security"
+  //   ).value;
+  // }
+
+  // function packageDetails(details) {
+//   const simplifiedDetails = details.map((item) => {
+//     console.log(item);
+//     return {
+//       quantity: 1,
+//       quantity: 1,
+//       quantity: 1,
+//       quantity: 1,
+//       quantity: 1,
+//       quantity: 1,
+//       quantity: 1,
+//       quantity: 1,
+//       quantity: 1,
+//       quantity: 1,
+//     };
+//   });
+//   return simplifiedDetails;
+// }
