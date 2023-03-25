@@ -144,30 +144,56 @@ export default class CheckoutProcess {
 
     
     // try {
-    const res = await services.checkout(json);
-    localStorage.removeItem("so-cart");
-    console.log("RESPONSE: ", res);
+      try {
+        const res = await services.checkout(json);
+        console.log(res);
+        localStorage.removeItem("so-cart");
+        location.assign("/checkout/success.html");
+      } catch (err) {
+        // get rid of any preexisting alerts.
+        removeAllAlerts();
+        for (let message in err.message) {
+          alertMessage(err.message[message]);
+        }
+  
+        console.log(err);
+      }
+    
+    }
 
-    if (res.ok) window.location.href = "../checkout/success.html";
-    else {
-      const errors = Object.keys(res.response)
-      console.log("ERRORS: ", errors)
-      console.log("error1: ", res.response["cardNumber"])
-      
-      removeAllAlerts();
-      
-      errors.map((errorKey) => {
-        console.log(errorKey)
+  }
 
-        alertMessage(res.response[errorKey]);
-      })
+
+
+// const res = await services.checkout(json);
+    
+    // console.log("RESPONSE: ", res);
+
+    // if (res.ok){
+    // 
+    // window.location.href = "../checkout/success.html"}
+ 
+    // else {
+    //   const errors = Object.keys(res.response)
+    //   console.log("ERRORS: ", errors)
+    //   console.log("error1: ", res.response["cardNumber"])
+      
+    //   removeAllAlerts();
+      
+    //   errors.map((errorKey) => {
+    //     console.log(errorKey)
+
+    //     alertMessage(res.response[errorKey]);
+    //   })
       // for(let message in errors) {
       //    alertMessage(res.response[message]);
       // }
-    }
-    // } catch (err) {
+
+
+          // } catch (err) {
     //   console.log("ERR: ", err);
     //   removeAllAlerts();
     // }
-  }
-}
+
+
+       //        setLocalStorage("so-cart", []);
