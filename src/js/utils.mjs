@@ -88,7 +88,7 @@ export function setCartNumber(){
 export function alertMessage(message, scroll = true){
   const alert = document.createElement("div");
   alert.classList.add("alert");
-  alert.innerHTML = `<p class="alert">${message}</p><span class="alert">X</span>`;
+  alert.innerHTML = `<p class="alert">${message}</p><span class="alert close-btn">X</span>`;
   alert.addEventListener("click", function(e){
     if(e.target.tagName == "SPAN"){
       main.removeChild(this);

@@ -370,3 +370,7 @@ ul.order-summary {
 #so-cart-icon {
   text-decoration: none;
 }
+
+.close-btn {
+  cursor: pointer;
+}
