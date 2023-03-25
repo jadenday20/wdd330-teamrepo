@@ -48,6 +48,10 @@ header {
   text-decoration: none;
   color: var(--font-body);
 }
+#profile-img {
+  width: 40px;
+  height: 40px;
+}
 .hero {
   position: relative;
 }
@@ -98,7 +102,17 @@ button {
 }
 /* End utility classes */
 
+.options {
+  display: flex;
+  gap: .5em;
+}
+
 /* Cart icon styles */
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .cart {
   padding-top: 1em;
   position: relative;
@@ -108,7 +122,7 @@ button {
 .cart svg {
   width: 25px;
 }
-.cart:hover {
+.cart:hover, .user:hover {
   /* fill: gray; */
   opacity: 50%;
 }
