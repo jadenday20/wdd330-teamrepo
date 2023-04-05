@@ -98,13 +98,13 @@ button {
 }
 .divider {
   border-bottom: 2px solid var(--primary-color);
-  margin-top: .75em;
+  margin-top: 0.75em;
 }
 /* End utility classes */
 
 .options {
   display: flex;
-  gap: .5em;
+  gap: 0.5em;
 }
 
 /* Cart icon styles */
@@ -122,7 +122,8 @@ button {
 .cart svg {
   width: 25px;
 }
-.cart:hover, .user:hover {
+.cart:hover,
+.user:hover {
   /* fill: gray; */
   opacity: 50%;
 }
@@ -267,22 +268,22 @@ div.checkout-btn {
 } */
 
 .checkout-btn {
-  margin: 1em auto;  
+  margin: 1em auto;
   cursor: pointer;
 }
 
-span#cart-subtotal, 
-span#shipping-est, 
-span#Tax, 
-span#total, 
-span#cartTotal, 
-span#shipping, 
-span#tax, 
+span#cart-subtotal,
+span#shipping-est,
+span#Tax,
+span#total,
+span#cartTotal,
+span#shipping,
+span#tax,
 span#orderTotal {
   float: right;
 }
 
-.subtotal{
+.subtotal {
   text-align: center;
 }
 
@@ -290,20 +291,20 @@ span#orderTotal {
   margin: 1em;
 }
 
-div.alert{
+div.alert {
   display: flex;
-    justify-content: space-between;
-    background: rgb(253, 164, 105);
-    /* padding: 0.5em; */
-    /* color: red; */
-    border: 1px solid rgb(255, 137, 59);
+  justify-content: space-between;
+  background: rgb(253, 164, 105);
+  /* padding: 0.5em; */
+  /* color: red; */
+  border: 1px solid rgb(255, 137, 59);
 }
 
-span.alert{
+span.alert {
   padding: 1em;
 }
 
-p.alert{
+p.alert {
   margin-left: 1em;
 }
 @media screen and (min-width: 500px) {
