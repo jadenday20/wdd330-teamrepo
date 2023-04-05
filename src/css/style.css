@@ -388,3 +388,9 @@ ul.order-summary {
 .close-btn {
   cursor: pointer;
 }
+
+.cart-card__delete {
+  grid-column: 3;
+  grid-row: 3;
+  margin-left: 0;
+}

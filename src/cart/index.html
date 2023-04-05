@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
 
@@ -28,8 +29,32 @@
           <a class="checkout-link" href="../checkout/index.html">Checkout</a>
         </div> -->
       </section>
+      <script>
+        function getLocalStorage(key) {
+          return JSON.parse(localStorage.getItem(key));
+        }
+
+        function setLocalStorage(key, data) {
+          localStorage.setItem(key, JSON.stringify(data));
+        }
+
+        function deleteItem(Id) {
+          const cartItems = getLocalStorage("so-cart");
+          for (let i = 0; i < cartItems.length; i++) {
+            let id = cartItems[i].Id;
+            if (id == Id) {
+              cartItems.splice(i, 1);
+              setLocalStorage("so-cart", cartItems);
+              location.reload();
+              return;
+            }
+          }
+        }
+
+      </script>
     </main>
 
     <footer id="main-footer"></footer>
   </body>
+
 </html>
