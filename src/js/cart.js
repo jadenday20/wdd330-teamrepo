@@ -32,7 +32,7 @@ localStorage.removeItem(item.Id);
     return
   }
 }
-if (getLocalStorage("so-cart")) {
+if (getLocalStorage("so-cart") && (getLocalStorage("so-cart").length != 0)) {
 renderCartContents();
 let cartContents = getLocalStorage("so-cart");
 calculateSubtotal(cartContents);
