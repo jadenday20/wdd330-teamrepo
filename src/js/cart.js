@@ -2,7 +2,7 @@ import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
 function renderCartContents() {
   const cartItems = getLocalStorage("so-cart");
-  setQuantity(cartItems)
+  setQuantity(cartItems);
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
@@ -22,15 +22,17 @@ function cartItemTemplate(item) {
   <p class="cart-card__color">${item.Colors[0].ColorName}</p>
   <p class="cart-card__quantity">qty: ${getLocalStorage(item.Id)}</p>
   <p class="cart-card__price">$${item.FinalPrice}</p>
+  <button class="cart-card__delete" onclick="deleteItem('${item.Id}')">X</button>
 </li>`;
 localStorage.removeItem(item.Id);
+
   return newItem;
   }
   else{
     return
   }
 }
-if (getLocalStorage("so-cart")) {
+if (getLocalStorage("so-cart") && (getLocalStorage("so-cart").length != 0)) {
 renderCartContents();
 let cartContents = getLocalStorage("so-cart");
 calculateSubtotal(cartContents);
@@ -62,3 +64,15 @@ function calculateSubtotal(productList){
         }
     }
   }
+
+//   export function deleteItem(Id) {
+//     const cartItems = getLocalStorage("so-cart")
+//     for (let i = 0; i < cartItems.length; i++) {
+//       let id = cartItems[i].Id;
+//       if (id == Id) {
+//         cartItems.splice(i, 1);
+//         setLocalStorage("so-cart", cartItems);
+//         return;
+//       }
+//     }
+// }
