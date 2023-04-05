@@ -10,42 +10,38 @@ import { loadHeaderFooter } from "./utils.mjs";
 import CheckoutProcess from "./CheckoutProcess.mjs";
 loadHeaderFooter();
 
-if (getLocalStorage("so-cart")){
-const myCheckout = new CheckoutProcess("so-cart", ".order-summary");
-myCheckout.init();
+if (getLocalStorage("so-cart")) {
+  const myCheckout = new CheckoutProcess("so-cart", ".order-summary");
+  myCheckout.init();
 
-// document.querySelector("#checkout").addEventListener("click", (e) => {
-//   e.preventDefault();
-//   myCheckout.checkout();
-// });
+  // document.querySelector("#checkout").addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   myCheckout.checkout();
+  // });
 
-document
-  .querySelector("#zip")
-  .addEventListener("blur", myCheckout.calculateOrdertotal.bind(myCheckout));
-// listening for click on the button
+  document
+    .querySelector("#zip")
+    .addEventListener("blur", myCheckout.calculateOrdertotal.bind(myCheckout));
+  // listening for click on the button
 
-// document.querySelector("#checkout").addEventListener("click", (e) => {
-//   e.preventDefault();
-//   myCheckout.checkout();
-// });
+  // document.querySelector("#checkout").addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   myCheckout.checkout();
+  // });
 
-document.querySelector("#checkout")
-  .addEventListener("click", (e) => {
+  document.querySelector("#checkout").addEventListener("click", (e) => {
     e.preventDefault();
     const myForm = document.forms[0];
     const chk_status = myForm.checkValidity();
     myForm.reportValidity();
-    if(chk_status) 
-      myCheckout.checkout();
+    if (chk_status) myCheckout.checkout();
   });
-
-}
-else{
+} else {
   const checkoutForm = document.querySelector(".products");
   checkoutForm.style.display = "none";
-  document.querySelector("main").innerHTML = "<h1>Uh Oh! Looks like your cart is empty:(</h1><a href='/index.html'>Back to the Homepage</a>"
+  document.querySelector("main").innerHTML =
+    "<h1>Uh Oh! Looks like your cart is empty:(</h1><a href='/index.html'>Back to the Homepage</a>";
 }
-
 
 // let cartContents = getLocalStorage("so-cart");
 
